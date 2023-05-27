@@ -1,0 +1,31 @@
+{
+  "name": "Linkedin Notification",
+  "description": "Free Linkedin Notification alert extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "24": "icon.png",
+      "32": "icon.png"
+    },
+    "default_popup": "index.html",
+    "default_title": "Linkedin Notification"
+  },
+  "background": {
+    "service_worker": "src/background.ts"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/content.tsx"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ],
+  "permissions": ["storage", "https://www.linkedin.com/*"],
+  "icons": {
+    "256": "icon.png",
+    "128": "icon.png",
+    "48": "icon.png",
+    "16": "icon.png"
+  }
+}
